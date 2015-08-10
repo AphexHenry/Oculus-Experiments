@@ -1,8 +1,8 @@
 #include "cinder/app/App.h"
-#include "cinder/app/RendererGl.h"
 #include "cinder/gl/Batch.h"
-
-#include "FMOD.hpp"
+#include "Tools.h"
+#include "ParticleManager.h"
+#include "VisualRenderer.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -11,40 +11,46 @@ using namespace std;
 class OculusFMODApp : public App {
   public:
 	void setup() override;
+    void update();
 	void draw() override;
 
-	FMOD::System	*mSystem;
-    FMOD::Sound    	*mSound;
-	FMOD::Channel	*mChannel;
+    vec3 mPos;
+    float mTimer;
 };
 
 void OculusFMODApp::setup()
 {
-    FMOD::System_Create( &mSystem );
-    mSystem->init( 32, FMOD_INIT_NORMAL | FMOD_INIT_ENABLE_PROFILE, NULL );
+    mTimer = 0.f;
+    
+    VisualRenderer::instance()->addDrawFunction( std::bind( &ParticleManager::draw, *(ParticleManager::instance()) ) );
+}
 
-    mSystem->createSound( getAssetPath( "Blank__Kytt_-_08_-_RSPN.mp3" ).string().c_str(), FMOD_SOFTWARE, NULL, &mSound );
-	mSound->setMode( FMOD_LOOP_NORMAL );
+void OculusFMODApp::update()
+{
+    float lTimeInterval = 0.03f;
+    mTimer += lTimeInterval;
+    float lFar = 20.f;
+    vec3 lNewVec = vec3(lFar * cos(mTimer), lFar * sin(mTimer), 0.f);
+    mPos = lNewVec;
 
-	mSystem->playSound( FMOD_CHANNEL_FREE, mSound, false, &mChannel );
+    VisualRenderer::instance()->update(lTimeInterval);
+    ParticleManager::instance()->update(lTimeInterval);
+    
 }
 
 void OculusFMODApp::draw()
 {
-	gl::clear();
-	
-	// grab 512 samples of the wave data
-	float waveData[512];
-	mSystem->getWaveData( waveData, 512, 0 );
-	
-	// render the 512 samples to a VertBatch
-	gl::VertBatch vb( GL_LINE_STRIP );
-	for( int i = 0; i < 512; ++i )
-		vb.vertex( getWindowWidth() / 512.0f * i, getWindowCenter().y + 100 * waveData[i] );
-
-	// draw the points as a line strip
-	gl::color( Color( 1.0f, 0.5f, 0.25f ) );
-	vb.draw();
+    VisualRenderer::instance()->draw();
 }
 
-CINDER_APP( OculusFMODApp, RendererGl )
+void prepareSettings( App::Settings *settings )
+{
+    hmd::RiftManager::initialize();
+    
+    settings->disableFrameRate();
+    settings->setTitle( "Oculus Rift Sample" );
+    settings->setWindowSize( 1920, 1080 );
+}
+
+
+CINDER_APP( OculusFMODApp, RendererGl( RendererGl::Options().msaa(0) ), prepareSettings );
