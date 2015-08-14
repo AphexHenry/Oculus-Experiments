@@ -19,11 +19,11 @@ public:
     void update(float aTimeInterval) override;
     void draw() override;
 private:
-    float mSpeed;
     ci::vec3  mPositionStart;
     float mIntensity;
     float mTime;
     float mRadius;
+    float mSpeedRotation;
 };
 
 #endif /* defined(__OculusFMOD__ParticleLightBug__) */

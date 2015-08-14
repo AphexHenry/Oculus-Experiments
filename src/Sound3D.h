@@ -15,8 +15,14 @@
 class Sound3D
 {
 public:
-    void setAttributes(ci::vec3 aPosition, ci::vec3 aSpeed);
+    Sound3D();
+    void update(ci::vec3 aPosition, ci::vec3 aSpeed);
+    void play();
+    FMOD_VECTOR makeFMOD_VECTOR(ci::vec3 aCiVec);
+
 private:
+    FMOD_VECTOR mPos;
+    FMOD_VECTOR mSpeed;
     FMOD::Channel	*mChannel;
 };
 

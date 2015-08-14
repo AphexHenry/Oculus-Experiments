@@ -1,7 +1,7 @@
 #pragma once
 #include "cinder/CinderResources.h"
 
-//#define RES_MY_RES			CINDER_RESOURCE( ../resources/, image_name.png, 128, IMAGE )
+#define SOUND_FLIES			CINDER_RESOURCE( ../resources/, Craquement.wav, 128, WAV )
 
 
 

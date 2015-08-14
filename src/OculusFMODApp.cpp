@@ -35,7 +35,7 @@ void OculusFMODApp::update()
 
     VisualRenderer::instance()->update(lTimeInterval);
     ParticleManager::instance()->update(lTimeInterval);
-    
+    SoundManager::instance()->update();
 }
 
 void OculusFMODApp::draw()

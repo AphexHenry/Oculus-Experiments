@@ -18,10 +18,9 @@ public:
     virtual void draw() = 0;
 
 protected:
+    Sound3D mSound;
     ci::vec3 mPosition;
     ci::vec3 mSpeed;
-    
-    Sound3D mSound;
 };
 
 #endif /* defined(__OculusFMOD__Particle__) */

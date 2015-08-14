@@ -15,19 +15,24 @@ using namespace ci;
 
 ParticleLightBug::ParticleLightBug()
 {
+    mSound.play();
     mIntensity = 0.f;
     mTime = 0.f;
-    mSpeed = randFloat(2.f);
+    mSpeedRotation = randFloat(2.f);
     float lDistanceStart = 1.f;
-    mRadius = randFloat(2.f);
-    mPositionStart = vec3(Rand::randFloat() - 0.5, Rand::randFloat() - 0.5, Rand::randFloat() - 0.5) * lDistanceStart;
+    float lDistanceZ = 3.f;
+    mRadius = 2.f + randFloat(2.f);
+    mPositionStart = vec3(Rand::randFloat() - 0.5f, Rand::randFloat() - 0.5f, -Rand::randFloat() * lDistanceZ) * lDistanceStart;
 }
 
 void ParticleLightBug::update(float aTimeInterval)
 {
-    mTime += aTimeInterval * mSpeed;
+    mTime += aTimeInterval * mSpeedRotation;
     float lDistance = 1.f * mRadius;
-    mPosition = mPositionStart + vec3(lDistance * cos(mTime), lDistance * sin(mTime), 0.f);
+    vec3 lNewPos = mPositionStart + vec3(lDistance * cos(mTime * 0.4), lDistance * sin(mTime * 0.4), 0.f);
+    mSpeed = (lNewPos - mPosition) / aTimeInterval;
+    mPosition = lNewPos;
+    mSound.update(mPosition, mSpeed);
 }
 
 void ParticleLightBug::draw()

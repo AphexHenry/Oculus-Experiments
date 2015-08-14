@@ -22,13 +22,18 @@ class SoundManager {
         static SoundManager* sInstance;
     
         FMOD::System	*mSystem;
-        std::vector<FMOD::Sound * > mSounds;
+        std::map<SoundEnum, FMOD::Sound * > mSounds;
     
     public:
+        float mDebugTime;
+    
         static SoundManager* instance();
-        void init();
+        SoundManager();
+        ~SoundManager();
+    
         void update();
-        void playSound(SoundEnum aSound, FMOD::Channel * aChannel);
+        FMOD::Channel *  getChannel();
+        void playSound(SoundEnum aSound, FMOD::Channel ** aChannel);
 };
 
 #endif /* defined(__OculusFMOD__SoundManager__) */

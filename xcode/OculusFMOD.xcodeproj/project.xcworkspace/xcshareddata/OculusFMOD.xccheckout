@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3DA9A3AC-AF25-49DF-8494-44CF5C2F1131</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OculusFMOD</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CDBFCA9B5779A37F8EB7C2765EE61DE9231BAAED</key>
+		<string>https://github.com/AphexHenry/Oculus-Experiments.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>xcode/OculusFMOD.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CDBFCA9B5779A37F8EB7C2765EE61DE9231BAAED</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AphexHenry/Oculus-Experiments.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CDBFCA9B5779A37F8EB7C2765EE61DE9231BAAED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CDBFCA9B5779A37F8EB7C2765EE61DE9231BAAED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OculusFMOD</string>
+		</dict>
+	</array>
+</dict>
+</plist>

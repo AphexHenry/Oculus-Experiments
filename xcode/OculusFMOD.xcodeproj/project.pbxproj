@@ -25,6 +25,7 @@
 		9C02A2361B72015E0007C22A /* VisualRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C02A2341B72015E0007C22A /* VisualRenderer.cpp */; };
 		9C02A2391B72519F0007C22A /* ParticleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C02A2371B72519F0007C22A /* ParticleManager.cpp */; };
 		9C0B1C8D1B70164800662F98 /* LibOVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0B1C8C1B70164800662F98 /* LibOVR.framework */; };
+		9C7EC02D1B7A2797008E4D31 /* Craquement.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EC02C1B7A2797008E4D31 /* Craquement.wav */; };
 		9CACBE121B7904D80046BD95 /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CACBE101B7904D80046BD95 /* Drawable.cpp */; };
 		9CACBE151B790A050046BD95 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CACBE131B790A050046BD95 /* Tools.cpp */; };
 		9CACBE181B7916D30046BD95 /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = 9CACBE161B7916D30046BD95 /* phong.frag */; };
@@ -73,6 +74,7 @@
 		9C02A2371B72519F0007C22A /* ParticleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleManager.cpp; path = ../src/ParticleManager.cpp; sourceTree = "<group>"; };
 		9C02A2381B72519F0007C22A /* ParticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleManager.h; path = ../src/ParticleManager.h; sourceTree = "<group>"; };
 		9C0B1C8C1B70164800662F98 /* LibOVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LibOVR.framework; path = ../blocks/OculusRift/LibOVR/Lib/Mac/Release/LibOVR.framework; sourceTree = "<group>"; };
+		9C7EC02C1B7A2797008E4D31 /* Craquement.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Craquement.wav; path = ../assets/Craquement.wav; sourceTree = "<group>"; };
 		9CACBE101B7904D80046BD95 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = ../src/Drawable.cpp; sourceTree = "<group>"; };
 		9CACBE111B7904D80046BD95 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drawable.h; path = ../src/Drawable.h; sourceTree = "<group>"; };
 		9CACBE131B790A050046BD95 /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = ../src/Tools.cpp; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C7EC02C1B7A2797008E4D31 /* Craquement.wav */,
 				9CACBE161B7916D30046BD95 /* phong.frag */,
 				9CACBE171B7916D30046BD95 /* phong.vert */,
 				2D6AABEF58C248C39879A8C6 /* CinderApp.icns */,
@@ -359,6 +362,7 @@
 				9CACBE191B7916D30046BD95 /* phong.vert in Resources */,
 				9CACBE181B7916D30046BD95 /* phong.frag in Resources */,
 				C7D2F997A1114117A7494CC1 /* CinderApp.icns in Resources */,
+				9C7EC02D1B7A2797008E4D31 /* Craquement.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
